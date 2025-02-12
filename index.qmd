@@ -11,25 +11,48 @@ bibliography: references.bib
 csl: csl/econometrica.csl
 ---
 
-## Welcome to Our Research
+# Welcome to Our Research
 
-### Why is this topic important?
+## Research Rationale
 
-The rapid advancement of AI is transforming the workforce by reshaping job opportunities and salary structures. While AI-driven technologies enhance productivity and facilitate the emergence of new roles, they also contribute to job displacement, particularly in routine-based occupations. Empirical studies have demonstrated that automation has been a key driver of income inequality [@adhikari2024], disproportionately impacting middle-skilled and less-educated workers. Conversely, AI-driven professions are experiencing new work opportunities, particularly in technology-related fields, necessitating a shift in workforce skills and adaptability.
+Our team chose **Salary Disparities Across Disciplines: Who Benefits Most from AI's Rise?** as our research topic. Due to the rapid development of AI chatbots and substantial infrastructure investments by companies such as OpenAI, Google, NVIDIA, and DeepSeek, a significant restructuring of the current workforce appears inevitable. Some existing occupations will diminish or potentially disappear, while new roles will emerge and command higher compensation. Understanding these changes, identifying potential trends, and analyzing reliable data regarding AI's impact are of paramount importance.
 
-The adoption of AI technologies brings wage volatility and job opportunities across different income groups. While AI roles often require unique, high-demand skillsets within specific occupations, it is overall important to implement policy measures to reduce the variations in industry adoption and workforce accessibility. As AI reshapes job requirements, reskilling becomes imperative, particularly for non-technical workers who are at higher risk of displacement. Addressing the digital skills gap through targeted training programs is essential to ensuring workforce adaptability and mitigating the socioeconomic disruptions caused by AI-driven labor market transformations.
+---
 
-### Trend Analysis of AI Development and Salary Fluctuations
+## Why is this topic important?
 
-The rapid advancement of AI has led to an increasing market demand for AI-related skills, significantly influencing employment trends and salary structures in the United States. Studies suggest that various job sectors are highly susceptible to AI-driven transformation, including those in traditionally high-skilled industries [@colombo2024]. Similarly, in China, the demand for AI professionals surged in 2024, particularly in specialized domains such as healthcare and applied sciences, as companies sought to attract top talent in these fields. Salaries for AI specialists have risen substantially. Moreover, the growing competition in the AI sector has reshaped existing salary distributions. AI-compared to traditional IT engineering roles has been recorded as offering higher salary premiums and employment benefits, potentially exacerbating the wage disparity between AI professionals and non-AI professionals, thereby influencing labor market equilibrium [@stone2024].
+The rapid advancement of AI is transforming the workforce by reshaping job opportunities and salary structures. While AI-driven technologies enhance productivity and facilitate the emergence of new roles, they also contribute to job displacement, particularly in routine-based occupations. 
 
-AI is fundamentally transforming labor markets across various industries, exerting a significant influence on wage structures depending on job characteristics. Repetitive rule-based tasks, such as basic data entry or customer service automation, are highly susceptible to AI-driven automation, reducing the demand for such roles in the labor market, thereby cutting down employment opportunities and lowering compensation obtained. For instance, AI has been widely adopted in human resources management candidate screening, prompting some employers to lessen workforce hiring needs [@sezgin2023].
+Empirical studies have demonstrated that automation has been a key driver of income inequality [@adhikari2024], disproportionately impacting middle-skilled and less-educated workers. Conversely, AI-driven professions are experiencing new work opportunities, particularly in technology-related fields, necessitating a shift in workforce skills and adaptability.
 
-Conversely, occupations requiring advanced cognitive skills, creativity, or interpersonal communication—such as those in professional services—are less likely to be fully replaced by AI and may instead benefit from hybrid automation models. In the medical field, AI-powered diagnostic tools have enhanced precision and efficiency in medical decision-making, but final assessments still rely heavily on human expertise [@ansari2024]. Similarly, in the legal sector, AI-driven automation has accelerated case analysis and legal procedures, but complex legal judgments continue to rely on human practitioners. Harvard Law Professor David Wilkins has found that while generative AI has the potential to transform legal practices, the primary role remains that of a supportive tool rather than a replacement. Industries with a focus on tasks that affect financial and governance decision-making may experience wage polarization due to AI-induced advancements, where professionals may experience wage growth due to AI-driven productivity enhancements.
+The adoption of AI technologies brings **wage volatility and job opportunities** across different income groups. While AI roles often require unique, high-demand skillsets within specific occupations, it is overall important to implement policy measures to reduce the variations in industry adoption and workforce accessibility. As AI reshapes job requirements, reskilling becomes imperative, particularly for non-technical workers who are at higher risk of displacement. Addressing the digital skills gap through targeted training programs is essential to ensuring workforce adaptability and mitigating the socioeconomic disruptions caused by AI-driven labor market transformations.
 
-### What do you expect to find in your analysis?
+---
 
-Our research encompasses various aspects of salary disparities. Specifically, we aim to investigate income and job distribution differences, including an analysis of which geographical regions see the highest demand and wage disparities for both AI-related and traditional professional roles. Through a comprehensive analysis of recent datasets, we aim to identify the most sought-after required skills among job listings. Furthermore, we intend to investigate the differential impact of AI-driven changes on high-skill versus middle-skill occupations.
+## Trend Analysis of AI Development and Salary Fluctuations
+
+The rapid advancement of AI has led to an increasing market demand for AI-related skills, significantly influencing employment trends and salary structures in the United States. Studies suggest that various job sectors are highly susceptible to AI-driven transformation, including those in traditionally high-skilled industries [@colombo2024]. 
+
+Similarly, in China, the demand for AI professionals surged in 2024, particularly in specialized domains such as **healthcare and applied sciences**, as companies sought to attract top talent in these fields. Salaries for AI specialists have risen substantially. Moreover, the growing competition in the AI sector has reshaped existing salary distributions. AI-related professions offer **higher salary premiums and employment benefits** compared to traditional IT engineering roles, potentially exacerbating the wage disparity between AI professionals and non-AI professionals, thereby influencing labor market equilibrium [@stone2024].
+
+AI is fundamentally transforming labor markets across various industries, exerting a significant influence on **wage structures depending on job characteristics**. Repetitive rule-based tasks, such as **basic data entry or customer service automation**, are highly susceptible to AI-driven automation, reducing the demand for such roles in the labor market, thereby cutting down employment opportunities and lowering compensation obtained. For instance, AI has been widely adopted in **human resources management candidate screening**, prompting some employers to lessen workforce hiring needs [@sezgin2023].
+
+Conversely, occupations requiring **advanced cognitive skills, creativity, or interpersonal communication**—such as those in **professional services**—are less likely to be fully replaced by AI and may instead benefit from hybrid automation models. 
+
+- **Medical field**: AI-powered diagnostic tools have enhanced precision and efficiency in medical decision-making, but final assessments still rely heavily on human expertise [@ansari2024].
+- **Legal sector**: AI-driven automation has accelerated case analysis and legal procedures, but **complex legal judgments continue to rely on human practitioners**. Harvard Law Professor **David Wilkins** has found that while generative AI has the potential to transform legal practices, the primary role remains that of a **supportive tool rather than a replacement**.
+- **Finance and Governance**: Industries with a focus on **financial and governance decision-making** may experience **wage polarization** due to AI-induced advancements, where professionals may experience **wage growth** due to AI-driven productivity enhancements.
+
+---
+
+## What do you expect to find in your analysis?
+
+Our research encompasses various aspects of **salary disparities**. Specifically, we aim to investigate:
+- **Income and job distribution differences**, including an analysis of which **geographical regions** see the highest demand and wage disparities for both AI-related and traditional professional roles.
+- **Comprehensive analysis of recent datasets**, identifying the most sought-after required skills among job listings.
+- **The differential impact of AI-driven changes on high-skill versus middle-skill occupations**.
+
+---
 
 ## AI vs. Non-AI Salary Comparison
 (Your analysis and charts here)
@@ -42,5 +65,7 @@ Our research encompasses various aspects of salary disparities. Specifically, we
 
 ## Industry Salary Growth in 2024
 (Which industries are growing the fastest?)
+
+---
 
 ## References

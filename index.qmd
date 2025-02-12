@@ -15,7 +15,7 @@ csl: csl/econometrica.csl
 
 ## Research Rationale
 
-Our team chose **Salary Disparities Across Disciplines: Who Benefits Most from AI's Rise?** as our research topic. Due to the rapid development of AI chatbots and substantial infrastructure investments by companies such as OpenAI, Google, NVIDIA, and DeepSeek, a significant restructuring of the current workforce appears inevitable. Some existing occupations will diminish or potentially disappear, while new roles will emerge and command higher compensation. Understanding these changes, identifying potential trends, and analyzing reliable data regarding AI's impact are of paramount importance.
+Our team chose **Salary Disparities Across Disciplines: Who Benefits Most from AI's Rise? ** as our research topic. Due to the rapid development of AI chatbots and substantial infrastructure investments by companies such as OpenAI, Google, NVIDIA, and DeepSeek, a significant restructuring of the current workforce appears inevitable. Some existing occupations will diminish or potentially disappear, while new roles will emerge and command higher compensation. Understanding these changes, identifying potential trends, and analyzing reliable data regarding AI's impact are of paramount importance.
 
 ---
 

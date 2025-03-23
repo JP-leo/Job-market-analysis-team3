@@ -1,0 +1,71 @@
+---
+title: "Data Analysis"
+subtitle: "Comprehensive Data Cleaning & Exploratory Analysis of Job Market Trends"
+author:
+  - name: Jiapei Li
+bibliography: references.bib
+csl: csl/econometrica.csl
+format: 
+  html:
+    toc: true
+    number-sections: true
+    df-print: paged
+jupyter: python3
+---
+
+## Data Cleaning & Preprocessing
+
+```{python}
+import pandas as pd
+import missingno as msno
+import matplotlib.pyplot as plt
+import plotly.express as px
+
+# 1. Read the CSV file
+df = pd.read_csv("lightcast_job_postings.csv")
+
+# 2. Columns to drop (if they exist)
+columns_to_drop = [
+    "ID", "URL", "ACTIVE_URLS", "DUPLICATES", "LAST_UPDATED_TIMESTAMP",
+    "NAICS2", "NAICS3", "NAICS4", "NAICS5", "NAICS6",
+    "SOC_2", "SOC_3", "SOC_5"
+]
+# Filter out columns that actually exist in the DataFrame to avoid KeyError
+valid_cols_to_drop = [col for col in columns_to_drop if col in df.columns]
+df.drop(columns=valid_cols_to_drop, inplace=True)
+
+# 3. Visualize missing values
+msno.heatmap(df)
+plt.title("Missing Values Heatmap")
+plt.show()
+
+# 4. Basic missing value processing
+df.dropna(thresh=len(df) * 0.5, axis=1, inplace=True) # If a column has more than 50% missing values, delete it.
+
+# If there is a 'SALARY' column, fill missing values with the median.
+if "SALARY" in df.columns:
+    df["SALARY"].fillna(df["SALARY"].median(), inplace=True)
+# If there is an 'Industry' column, fill missing values with 'Unknown'.
+if "Industry" in df.columns:
+    df["Industry"].fillna("Unknown", inplace=True)
+
+# 5. Remove duplicates
+df.drop_duplicates(subset=["TITLE", "COMPANY", "LOCATION", "POSTED"], keep="first", inplace=True)
+
+# 6. Number of job postings by industry
+if "Industry" in df.columns:
+    fig = px.bar(df["Industry"].value_counts(), title="Job Postings by Industry")
+    fig.show()
+
+# 7. Salary distribution by industry
+#   Only plot if both 'SALARY' and 'Industry' are present in the dataset
+if "SALARY" in df.columns and "Industry" in df.columns:
+    fig = px.box(df, x="Industry", y="SALARY", title="Salary Distribution by Industry")
+    fig.show()
+
+# 8. Remote vs On-Site job proportion
+#   If there is a 'REMOTE_TYPE_NAME' column, create a pie chart
+if "REMOTE_TYPE_NAME" in df.columns:
+    fig = px.pie(df, names="REMOTE_TYPE_NAME", title="Remote vs. On-Site Jobs")
+    fig.show()
+```

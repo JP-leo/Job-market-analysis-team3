@@ -68,4 +68,12 @@ if "SALARY" in df.columns and "Industry" in df.columns:
 if "REMOTE_TYPE_NAME" in df.columns:
     fig = px.pie(df, names="REMOTE_TYPE_NAME", title="Remote vs. On-Site Jobs")
     fig.show()
+
+# 9. Job postings trend over time
+#   If there is a 'POSTED' column, create a time series chart
+if "POSTED" in df.columns:
+    df['POSTED'] = pd.to_datetime(df['POSTED'], errors='coerce')
+    postings_over_time = df['POSTED'].value_counts().sort_index()
+    fig = px.line(x=postings_over_time.index, y=postings_over_time.values, labels={'x': 'Date Posted', 'y': 'Number of Job Postings'}, title="Job Postings Over Time")
+    fig.show()
 ```

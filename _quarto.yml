@@ -7,12 +7,8 @@ website:
     left:
       - href: index.qmd
         text: "Home"
-      - href: research_introduction.qmd
-        text: "Research"
       - href: data_analysis.qmd
         text: "Data Analysis"
-      - href: career_plan.qmd
-        text: "Career Strategy"
 
 format:
   html:

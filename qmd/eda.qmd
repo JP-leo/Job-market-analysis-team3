@@ -1,0 +1,51 @@
+---
+title: "Exploratory Data Analysis"
+format: html
+execute:
+  echo: true
+  eval: true
+---
+
+```{python}
+import pandas as pd
+df = pd.read_csv("data/lightcast_job_postings_cleaned.csv")
+df.head()
+print("Columns in df:", list(df.columns))
+```
+
+
+```{python}
+# 2) Top 10 “industries” by NAICS_2022_6_NAME
+col_ind = "NAICS_2022_6_NAME"
+cnt_ind = df[col_ind].value_counts().head(10)
+plt.figure(figsize=(8,5))
+plt.barh(cnt_ind.index, cnt_ind.values)
+plt.gca().invert_yaxis()
+plt.title("Top 10 NAICS_2022_6 Industries by Job Postings")
+plt.xlabel("Number of Postings")
+plt.tight_layout()
+plt.show()
+```
+
+```{python}
+# 3) Job postings by state
+cnt_st = df["STATE_NAME"].value_counts().head(10)
+plt.figure(figsize=(8,5))
+plt.bar(cnt_st.index, cnt_st.values)
+plt.xticks(rotation=45, ha="right")
+plt.title("Top 10 States by Job Postings")
+plt.ylabel("Number of Postings")
+plt.tight_layout()
+plt.show()
+```
+
+```{python}
+# 4) Remote vs On-Site
+cnt_r = df["REMOTE_TYPE_NAME"].value_counts()
+plt.figure(figsize=(5,5))
+plt.pie(cnt_r.values, labels=cnt_r.index, autopct="%1.1f%%")
+plt.title("Remote vs On-Site Jobs")
+plt.tight_layout()
+plt.show()
+
+```

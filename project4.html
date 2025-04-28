@@ -4811,7 +4811,7 @@ vertical-align: -.125em;
 </header>
 
 
-<div id="cc516944" class="cell">
+<div id="cc516944" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;lightcast_job_postings.csv&quot;</span>)</span>
@@ -4836,11 +4836,11 @@ vertical-align: -.125em;
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">&quot;POSTED&quot;</span> <span class="kw">in</span> df.columns:</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">&#39;POSTED&#39;</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">&#39;POSTED&#39;</span>], errors<span class="op">=</span><span class="st">&#39;coerce&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/z6/j54j6tys1bbdr2gqg5vfm6tw0000gn/T/ipykernel_13534/705840187.py:3: DtypeWarning: Columns (19,30) have mixed types. Specify dtype option on import or set low_memory=False.
+<pre><code>/var/folders/z6/j54j6tys1bbdr2gqg5vfm6tw0000gn/T/ipykernel_18012/3166840042.py:3: DtypeWarning: Columns (19,30) have mixed types. Specify dtype option on import or set low_memory=False.
   df = pd.read_csv(&quot;lightcast_job_postings.csv&quot;)</code></pre>
 </div>
 </div>
-<div id="5df86f59" class="cell" data-execution_count="4">
+<div id="5df86f59" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> LabelEncoder</span>
@@ -4848,15 +4848,15 @@ vertical-align: -.125em;
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c90afd3a" class="cell" data-execution_count="6">
+<div id="c90afd3a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cols_to_use <span class="op">=</span> [<span class="st">&#39;NAICS_2022_5_NAME&#39;</span>, <span class="st">&#39;EMPLOYMENT_TYPE_NAME&#39;</span>, <span class="st">&#39;REMOTE_TYPE_NAME&#39;</span>, <span class="st">&#39;EDUCATION_LEVELS_NAME&#39;</span>]</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df_kmeans <span class="op">=</span> df[cols_to_use].dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="73f0ec7d" class="cell" data-execution_count="7">
+<div id="73f0ec7d" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> pd.get_dummies(df_kmeans)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="08ba9c52" class="cell" data-execution_count="8">
+<div id="08ba9c52" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4883,7 +4883,7 @@ vertical-align: -.125em;
 </div>
 </div>
 </div>
-<div id="9a066823" class="cell" data-execution_count="9">
+<div id="9a066823" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>k_optimal <span class="op">=</span> <span class="dv">4</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>kmeans_final <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>k_optimal, random_state<span class="op">=</span><span class="dv">42</span>, n_init<span class="op">=</span><span class="dv">10</span>)</span>
@@ -4899,7 +4899,7 @@ vertical-align: -.125em;
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="e5c81a4e" class="cell" data-execution_count="11">
+<div id="e5c81a4e" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_kmeans.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                            NAICS_2022_5_NAME    EMPLOYMENT_TYPE_NAME  \
@@ -4917,7 +4917,7 @@ Name: count, dtype: int64</code></pre>
 4           [None]  [\n  &quot;No Education Listed&quot;\n]        2  </code></pre>
 </div>
 </div>
-<div id="b006c816" class="cell" data-execution_count="10">
+<div id="b006c816" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4950,7 +4950,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="ac6fa23c" class="cell" data-execution_count="12">
+<div id="ac6fa23c" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>features <span class="op">=</span> [<span class="st">&#39;NAICS_2022_5_NAME&#39;</span>, <span class="st">&#39;EMPLOYMENT_TYPE_NAME&#39;</span>, <span class="st">&#39;REMOTE_TYPE_NAME&#39;</span>, <span class="st">&#39;EDUCATION_LEVELS_NAME&#39;</span>]</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>profile_summary <span class="op">=</span> []</span>
@@ -4999,7 +4999,7 @@ Name: count, dtype: int64</code></pre>
 <p>We selected four features for clustering: NAICS_2022_5_NAME, EMPLOYMENT_TYPE_NAME, REMOTE_TYPE_NAME, and EDUCATION_LEVELS_NAME. After applying one-hot encoding to these categorical variables, we used the KMeans algorithm to build the model. To determine the optimal number of clusters, we used the Elbow Method and selected k=4, which divided the data into four distinct job groups. We then reduced the dimensionality of the clustered data to two components using PCA and visualized the results. The clusters were clearly separated and showed good internal consistency.</p>
 <p>Through analysis of the clustering results, we found the following: Cluster 0 mainly consists of jobs classified under “Unclassified Industry,” with most being full-time positions, low levels of remote work, and a majority requiring a bachelor’s degree. Cluster 1 also contains jobs from unclassified industries, but with a higher proportion of remote work opportunities, making it suitable for those who prefer remote jobs. Clusters 2 and 3 are primarily composed of jobs in “Computer Systems Design and Related Services,” with higher education requirements, often needing a master’s degree or higher. These clusters are more appropriate for technical job seekers.</p>
 <p>Based on the cluster characteristics, we recommend that job seekers who prefer remote work focus on opportunities within Cluster 1. Those with advanced degrees and technical backgrounds should prioritize jobs in Clusters 2 and 3. Entry-level candidates or those with lower education requirements may find suitable opportunities in Cluster 0.</p>
-<div id="9861ea2d" class="cell" data-execution_count="13">
+<div id="9861ea2d" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;lightcast_job_postings.csv&quot;</span>)</span>
@@ -5023,9 +5023,9 @@ Name: count, dtype: int64</code></pre>
 <span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">&quot;POSTED&quot;</span> <span class="kw">in</span> df.columns:</span>
 <span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">&#39;POSTED&#39;</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">&#39;POSTED&#39;</span>], errors<span class="op">=</span><span class="st">&#39;coerce&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/z6/j54j6tys1bbdr2gqg5vfm6tw0000gn/T/ipykernel_13534/2645817170.py:3: DtypeWarning: Columns (19,30) have mixed types. Specify dtype option on import or set low_memory=False.
+<pre><code>/var/folders/z6/j54j6tys1bbdr2gqg5vfm6tw0000gn/T/ipykernel_18012/2645817170.py:3: DtypeWarning: Columns (19,30) have mixed types. Specify dtype option on import or set low_memory=False.
   df = pd.read_csv(&quot;lightcast_job_postings.csv&quot;)
-/var/folders/z6/j54j6tys1bbdr2gqg5vfm6tw0000gn/T/ipykernel_13534/2645817170.py:14: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+/var/folders/z6/j54j6tys1bbdr2gqg5vfm6tw0000gn/T/ipykernel_18012/2645817170.py:14: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
 The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
 
 For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
@@ -5034,7 +5034,7 @@ For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using
   df[&quot;SALARY&quot;].fillna(df[&quot;SALARY&quot;].median(), inplace=True)</code></pre>
 </div>
 </div>
-<div id="16ab9a72" class="cell" data-execution_count="14">
+<div id="16ab9a72" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>cols_to_check <span class="op">=</span> [</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;EMPLOYMENT_TYPE_NAME&#39;</span>, </span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;REMOTE_TYPE_NAME&#39;</span>, </span>
@@ -5059,7 +5059,7 @@ MIN_YEARS_EXPERIENCE      0
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="2f6dafbb" class="cell" data-execution_count="15">
+<div id="2f6dafbb" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>cols_to_use <span class="op">=</span> [</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;EMPLOYMENT_TYPE_NAME&#39;</span>, </span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;REMOTE_TYPE_NAME&#39;</span>, </span>
@@ -5074,17 +5074,17 @@ dtype: int64</code></pre>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> pd.get_dummies(df_regression.drop(<span class="st">&#39;SALARY&#39;</span>, axis<span class="op">=</span><span class="dv">1</span>), drop_first<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="a2a01640" class="cell" data-execution_count="16">
+<div id="a2a01640" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">688</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cd54aee2" class="cell" data-execution_count="17">
+<div id="cd54aee2" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>lr_model <span class="op">=</span> LinearRegression()</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>lr_model.fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <style>#sk-container-id-1 {
 
 --sklearn-color-text: #000;
@@ -5435,10 +5435,10 @@ display: block;
 </style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LinearRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LinearRegression</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.6/modules/generated/sklearn.linear_model.LinearRegression.html">?<span>Documentation for LinearRegression</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>LinearRegression()</pre></div> </div></div></div></div>
 </div>
 </div>
-<div id="0af59309" class="cell" data-execution_count="18">
+<div id="0af59309" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> lr_model.predict(X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="abe0dbd4" class="cell" data-execution_count="19">
+<div id="abe0dbd4" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, r2_score</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5452,7 +5452,7 @@ display: block;
 R²: 0.2912</code></pre>
 </div>
 </div>
-<div id="2184e8f5" class="cell" data-execution_count="20">
+<div id="2184e8f5" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>coef_df <span class="op">=</span> pd.DataFrame({</span>
@@ -5511,7 +5511,7 @@ R²: 0.2912</code></pre>
 </div>
 </div>
 <p>In this project, we used a linear regression model to predict salary levels based mainly on the job title feature (TITLE_NAME). The model results show that roles in healthcare, such as Urgent Care Physicians and Psychiatry Physicians, as well as positions in finance like Portfolio Strategists and IT security roles like Lead Security Architects, have a strong positive impact on salary levels. This means that jobs requiring high specialization and in-demand skills tend to offer higher salaries. For job seekers, these findings provide useful guidance for career planning and salary expectations. People who aim for higher-paying jobs might consider focusing on fields like healthcare, finance, or IT security. However, it is also important to understand that these roles often come with higher professional requirements and work pressure. When making career choices, it is important to match personal interests, skills, and strengths with realistic goals. Companies can also use this insight to better design competitive salary strategies and attract top talent.</p>
-<div id="39fd46a6" class="cell" data-execution_count="23">
+<div id="39fd46a6" class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>results_df <span class="op">=</span> pd.DataFrame({</span>
@@ -5535,14 +5535,15 @@ R²: 0.2912</code></pre>
 <span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>    line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">&#39;red&#39;</span>, dash<span class="op">=</span><span class="st">&#39;dash&#39;</span>)</span>
 <span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>fig.write_html(<span class="st">&quot;project4.html&quot;</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
 </div>
 </div>
 <p>The scatter plot shows the model’s prediction performance. The x-axis represents the actual salary, and the y-axis shows the predicted salary. The red dashed line represents a perfect prediction line. Overall, the model captures the general trend of salary changes fairly well. However, in the higher salary range, especially for jobs over 200,000 dollars per year, the model tends to underestimate salaries and shows larger prediction errors. In the lower salary range, especially for jobs below 100,000 dollars, the model predicts more accurately.</p>
 <p>This suggests that while the model provides helpful salary estimates, job seekers should use it carefully, especially when applying for high-paying positions. It is important to also consider personal background, industry trends, and specific job requirements. For those targeting high salaries, additional preparation, such as improving professional skills and gaining more experience, can help address the model’s potential underestimation.</p>
-<div id="883f8582" class="cell" data-execution_count="24">
+<div id="883f8582" class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>feature_importance <span class="op">=</span> pd.Series(lr_model.coef_, index<span class="op">=</span>X_train.columns)</span>
@@ -5562,7 +5563,8 @@ R²: 0.2912</code></pre>
 <span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>    template<span class="op">=</span><span class="st">&quot;plotly_white&quot;</span></span>
 <span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>fig.write_html(<span class="st">&quot;project4.html&quot;</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
 </div>

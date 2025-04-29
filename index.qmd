@@ -52,19 +52,6 @@ Our research encompasses various aspects of **salary disparities**. Specifically
 - **Comprehensive analysis of recent datasets**, identifying the most sought-after required skills among job listings.
 - **The differential impact of AI-driven changes on high-skill versus middle-skill occupations**.
 
----
-
-## AI vs. Non-AI Salary Comparison
-(Your analysis and charts here)
-
-## Geographic Salary Trends
-(Your findings on different states/cities)
-
-## Remote vs. On-Site Salary Differences
-(Comparison of remote jobs vs. in-office jobs)
-
-## Industry Salary Growth in 2024
-(Which industries are growing the fastest?)
 
 ---
 

@@ -1,9 +1,0 @@
-/.quarto/
-# Ignore all CSV files
-*.csv
-
-# Ignore figures if too big
-_output/
-figures/
-data/
-.venv/

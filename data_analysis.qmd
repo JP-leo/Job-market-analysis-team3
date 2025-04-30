@@ -1,8 +1,6 @@
 ---
 title: "Data Analysis"
 subtitle: "Comprehensive Data Cleaning & Exploratory Analysis of Job Market Trends"
-author:
-  - name: Jiapei Li
 bibliography: references.bib
 csl: csl/econometrica.csl
 format: 
@@ -51,29 +49,42 @@ if "Industry" in df.columns:
 
 # 5. Remove duplicates
 df.drop_duplicates(subset=["TITLE", "COMPANY", "LOCATION", "POSTED"], keep="first", inplace=True)
+```
 
-# 6. Number of job postings by industry
+### Job Postings by Industry
+```{python}
 if "Industry" in df.columns:
     fig = px.bar(df["Industry"].value_counts(), title="Job Postings by Industry")
     fig.show()
+```
+**Explanation:**  
+This bar chart shows the number of job postings across different industries. It highlights which sectors are most active in recruiting, allowing us to identify high-demand areas such as technology, healthcare, or finance.
 
-# 7. Salary distribution by industry
-#   Only plot if both 'SALARY' and 'Industry' are present in the dataset
+### Salary Distribution by Industry
+```{python}
 if "SALARY" in df.columns and "Industry" in df.columns:
     fig = px.box(df, x="Industry", y="SALARY", title="Salary Distribution by Industry")
     fig.show()
+```
+**Explanation:**  
+This box plot illustrates how salary ranges differ across industries. It helps reveal not only the median salary but also the variability and presence of outliers, giving insight into income inequality or competitive compensation within certain sectors.
 
-# 8. Remote vs On-Site job proportion
-#   If there is a 'REMOTE_TYPE_NAME' column, create a pie chart
+### Remote vs. On-Site Jobs
+```{python}
 if "REMOTE_TYPE_NAME" in df.columns:
     fig = px.pie(df, names="REMOTE_TYPE_NAME", title="Remote vs. On-Site Jobs")
     fig.show()
+```
+**Explanation:**  
+This pie chart breaks down the proportion of jobs by remote type. It shows how many roles are fully remote, hybrid, or entirely on-site, offering insights into post-pandemic work trends and flexibility offered by employers.
 
-# 9. Job postings trend over time
-#   If there is a 'POSTED' column, create a time series chart
+### Job Postings Over Time
+```{python}
 if "POSTED" in df.columns:
     df['POSTED'] = pd.to_datetime(df['POSTED'], errors='coerce')
     postings_over_time = df['POSTED'].value_counts().sort_index()
     fig = px.line(x=postings_over_time.index, y=postings_over_time.values, labels={'x': 'Date Posted', 'y': 'Number of Job Postings'}, title="Job Postings Over Time")
     fig.show()
 ```
+**Explanation:**  
+This line graph tracks how job postings have changed over time. Peaks and troughs may indicate hiring cycles, economic events, or seasonal effects in the job market.

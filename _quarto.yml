@@ -1,6 +1,5 @@
 project:
   type: website
-  output-dir: .
 
 website:
   title: "Job Market Analysis 2024"
@@ -13,10 +12,14 @@ website:
       - href: skill_gap_analysis.qmd
         text: "skill_gap_analysis"
       - href: project4.ipynb
-        text: "P4"  
+        text: "ML methods"  
 
 format:
   html:
     theme: cosmo
     toc: true
-    
+
+execute:
+  echo: true
+  eval: true
+  code-fold: true

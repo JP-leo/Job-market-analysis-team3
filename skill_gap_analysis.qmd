@@ -15,31 +15,56 @@ execute:
 import pandas as pd
 
 # Team members and their self-rated proficiency (1–5)
+# Team members and their self-rated proficiency (1–5)
 skills_data = {
-    "Name":      ["Deyang", "Yani", "Jiapei", "Junhao"],
-    "Python":            [4,       3,       2,        5],
-    "SQL":               [3,       2,       4,        3],
-    "Machine Learning":  [2,       1,       3,        4],
-    "Cloud Computing":   [1,       2,       2,        3]
+    "Name":             ["Deyang", "Yani", "Jiapei", "Junhao"],
+    "Python":           [4,        3,      4,         3],
+    "SQL":              [3,        3,      4,         3],
+    "Machine Learning": [2,        5,      5,         2],
+    "Cloud Computing":  [1,        4,      2,         3],
+    "R":                [3,        5,      4,         2],   # 
+    "AWS":              [4,        4,      2,         3],   # 
+    "Git":              [4,        3,      2,         1],   # 
+    "Excel":            [3,        4,      5,         2],   # 
 }
 
 df_skills = pd.DataFrame(skills_data).set_index("Name")
 df_skills
+
 ```
 
 3.1.2 Compare to Market Demand
 ```{python}
-# read cleaned job postings
-df = pd.read_csv("data/lightcast_job_postings_cleaned.csv")
+# Load raw job postings data
+raw_df = pd.read_csv("lightcast_job_postings.csv")
 
-# use the same skill columns
+# Drop irrelevant columns
+columns_to_drop = [
+    "ID", "URL", "ACTIVE_URLS", "DUPLICATES", "LAST_UPDATED_TIMESTAMP",
+    "NAICS2", "NAICS3", "NAICS4", "NAICS5", "NAICS6",
+    "SOC_2", "SOC_3", "SOC_5"
+]
+valid_cols_to_drop = [col for col in columns_to_drop if col in raw_df.columns]
+raw_df.drop(columns=valid_cols_to_drop, inplace=True)
+
+# Drop columns with >50% missing
+raw_df.dropna(thresh=len(raw_df) * 0.5, axis=1, inplace=True)
+
+# Fill missing values
+if "SALARY" in raw_df.columns:
+    raw_df["SALARY"].fillna(raw_df["SALARY"].median(), inplace=True)
+if "Industry" in raw_df.columns:
+    raw_df["Industry"].fillna("Unknown", inplace=True)
+
+# Remove duplicates
+raw_df.drop_duplicates(subset=["TITLE", "COMPANY", "LOCATION", "POSTED"], keep="first", inplace=True)
+
+# Count keyword occurrences
 top_skills = df_skills.columns.tolist()
-
-# count occurrences of each skill keyword in the job BODY
-job_text = df["BODY"].fillna("")
+job_text = raw_df["BODY"].fillna("")
 skill_counts = {s: job_text.str.contains(s, case=False).sum() for s in top_skills}
 
-# append a Market Demand row
+# Append demand row
 df_skills.loc["Market Demand"] = [skill_counts[s] for s in top_skills]
 df_skills
 ```
@@ -48,19 +73,19 @@ df_skills
 ```{python}
 import matplotlib.pyplot as plt
 
-# skills only
+# Team skill levels heatmap
 plt.figure(figsize=(6,2))
-plt.imshow(df_skills.iloc[:-1], aspect="auto")               # drop the Market Demand row
+plt.imshow(df_skills.iloc[:-1], aspect="auto")
 plt.colorbar(label="Skill Level (1–5)")
-plt.yticks(range(4), df_skills.index[:-1])
+plt.yticks(range(len(df_skills.index)-1), df_skills.index[:-1])
 plt.xticks(range(len(df_skills.columns)), df_skills.columns, rotation=45, ha="right")
 plt.title("Team Skill Levels")
 plt.tight_layout()
 plt.show()
 
-# demand only
+# Market demand heatmap
 plt.figure(figsize=(6,2))
-plt.imshow([df_skills.loc["Market Demand"]], aspect="auto")  # just the demand row
+plt.imshow([df_skills.loc["Market Demand"]], aspect="auto")
 plt.colorbar(label="Market Demand Count")
 plt.yticks([0], ["Market Demand"])
 plt.xticks(range(len(df_skills.columns)), df_skills.columns, rotation=45, ha="right")
@@ -68,4 +93,15 @@ plt.title("Market Demand by Skill")
 plt.tight_layout()
 plt.show()
 ```
+hj
+
+Based on the heatmap comparison of each person’s self-ratings (1–5) against the normalized market-demand scores, here’s a concise, paragraph-style improvement plan:
+
+Deyang shows the largest gaps in Cloud Computing and R. To close these, start with an AWS Fundamentals micro-course (Coursera or AWS’s own training) and follow up by building a small R Shiny dashboard using the free “R for Data Science” online book and the swirl R package for hands-on exercises. Aim to spend 2–3 hours per week on labs, then peer-review each other’s code in GitHub.
+
+Yani needs to boost Machine Learning and AWS skills. I recommend Andrew Ng’s Machine Learning specialization on Coursera, paired with the AWS Certified Cloud Practitioner path on AWS Training. After completing each module, apply what you’ve learned by deploying a simple classification model on AWS Sagemaker and sharing the workflow in a team repo, so everyone can give feedback.
+
+Jiapei would benefit most from deeper Cloud Computing practice and reinforcing R. Enroll in Google Cloud’s “Data Engineering” Qwiklabs quests and run through interactive R exercises via swirl. Host a 30-minute “teach-back” session after completing each mini-project—this both cements your own understanding and helps teammates pick up new tricks.
+
+Junhao has room to grow in Excel and SQL. Take an “Excel Essentials” short course on LinkedIn Learning, then tackle Mode’s SQL tutorial problems. Organize weekly problem-solving sessions where one member presents a real-world dataset and the rest write SQL queries together. This combination of structured learning and peer collaboration will efficiently close the remaining gaps.
 

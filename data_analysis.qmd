@@ -87,4 +87,5 @@ if "POSTED" in df.columns:
     fig.show()
 ```
 **Explanation:**  
+
 This line graph tracks how job postings have changed over time. Peaks and troughs may indicate hiring cycles, economic events, or seasonal effects in the job market.

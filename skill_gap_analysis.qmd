@@ -93,6 +93,7 @@ plt.title("Market Demand by Skill")
 plt.tight_layout()
 plt.show()
 ```
+
 hj
 
 Based on the heatmap comparison of each person’s self-ratings (1–5) against the normalized market-demand scores, here’s a concise, paragraph-style improvement plan:

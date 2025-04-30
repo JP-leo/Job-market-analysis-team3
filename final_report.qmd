@@ -1,0 +1,29 @@
+---
+title: "Evaluating Personal Job Market Prospects in 2024"
+subtitle: "Final Report"
+author: team 3
+date: today
+format: 
+  docx:
+    toc: true
+    number-sections: true
+    reference-doc: default
+bibliography: references.bib
+csl: csl/econometrica.csl
+execute:
+  echo: true
+  eval: true
+  code-fold: true
+---
+
+::: {.callout-note}
+This is the final integrated report combining all sections: data cleaning, skill gap analysis, machine learning methods, and final insights.
+:::
+
+{{< include "index.qmd" >}}
+
+{{< include "skill_gap_analysis.qmd" >}}
+
+{{< include "ML methods.ipynb" >}}
+
+{{< include "final_analytics.qmd" >}}

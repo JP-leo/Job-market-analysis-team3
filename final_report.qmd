@@ -1,7 +1,7 @@
 ---
 title: "Evaluating Personal Job Market Prospects in 2024"
 subtitle: "Final Report"
-author: team 3
+author: team 
 date: today
 format: 
   docx:

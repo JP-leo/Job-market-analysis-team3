@@ -7,12 +7,12 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: "Home"
+        text: "Introduction"
       - href: data_analysis.qmd
         text: "Data Analysis"
       - href: skill_gap_analysis.qmd
         text: "skill_gap_analysis"
-      - href: project4.ipynb
+      - href: ML methods.ipynb
         text: "ML methods"  
 
 format:
